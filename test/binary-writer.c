@@ -1,0 +1,9 @@
+#include <stdio.h>
+
+int main(int argc, char *argv[]){
+	unsigned char program[] = {0x06, 0x00, 0x0a, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x13, 0x00, 0x41, 0x00};
+	FILE *fd = fopen("test.bin", "wb");
+	fwrite(&program, sizeof(char), 14, fd);
+	fclose(fd);
+	return 0;
+}
